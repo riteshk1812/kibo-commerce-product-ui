@@ -3,7 +3,7 @@ import Product from "./Component/Product/Product";
 
 function App() {
   return (
-    <div className="">
+    <div>
       <Header />
       <Product />
     </div>

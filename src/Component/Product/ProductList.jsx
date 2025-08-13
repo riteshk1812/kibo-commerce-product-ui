@@ -9,7 +9,6 @@ export default function ProductList({ setCartItems }) {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                // setIsLoading(true);
                 const data = await fetch(PRODUCT_URI);
                 const response = await data.json();
                 setProducts(response);
@@ -42,19 +41,21 @@ export default function ProductList({ setCartItems }) {
     return (
         <div className='product-list'>
             {error && <div>{error}</div>}
-            {isLoading ? <div class="spinner-container">
-                <div class="spinner"></div>
-            </div> : products?.map(product => (
-                <div key={product.id} className='product-card'>
-                    <img src={product.image} alt={product.title} width={100} height={100} />
-                    <h4>{product.title}</h4>
-                    <p>{product.description}</p>
-                    <div className='product-action'>
-                        <span className='product-price'>${product.price}</span>
-                        <button onClick={() => handleAddToCart(product)}>Add to Cart</button>
+            {isLoading ?
+                <div className="spinner-container">
+                    <div className="spinner"></div>
+                </div> :
+                products?.map(product => (
+                    <div key={product.id} className='product-card'>
+                        <img src={product.image} alt={product.title} width={75} height={75} />
+                        <h4>{product.title}</h4>
+                        <p>{product.description.length > 500 ? product.description.substring(0, 500) + "..." : product.description}</p>
+                        <div className='product-action'>
+                            <span className='product-price'>${product.price}</span>
+                            <button onClick={() => handleAddToCart(product)}>Add to Cart</button>
+                        </div>
                     </div>
-                </div>
-            ))}
+                ))}
         </div>
     )
 }

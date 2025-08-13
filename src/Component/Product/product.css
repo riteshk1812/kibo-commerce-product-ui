@@ -1,4 +1,4 @@
-/* Deskto[ */
+/* Desktop */
 .product {
     display: flex;
     flex-wrap: wrap;
@@ -27,7 +27,7 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     width: 200px;
-    height: 420px;
+    min-height: 400px;
 }
 
 .product-card:hover {
@@ -127,24 +127,42 @@ button:hover {
     padding: 4px;
 }
 
-.cart-item p {
+.cart-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.cart-title {
+    font-size: 0.9rem;
+    color: #333;
+    margin: 0;
+    width: 75%;
+}
+
+.cart-qty {
+    display: flex;
+    align-items: start;
+    font-weight: bold;
+    color: #0177c8;
+    margin: 0;
+}
+
+/* .cart-item p {
     margin: 0;
     font-size: 0.9rem;
     color: #333;
-}
+} */
 
-.cart-item .quantity {
+/* .cart-item .quantity {
     margin-left: auto;
     font-weight: bold;
     color: #0177c8;
-}
+} */
 
 /* loader */
 .spinner-container {
-    /* display: flex;
-    justify-content: center;
-    align-items: start;
-    height: 100vh; */
     position: absolute;
     transform: translate(-50%,-50%);
     left: 50%;
@@ -205,5 +223,12 @@ button:hover {
 
     .cart {
         max-width: 230px;
+    }
+
+    .cart-item, .cart-info  {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
     }
 }

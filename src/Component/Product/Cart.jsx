@@ -1,8 +1,6 @@
 import React from 'react';
 
 export default function Cart({ product, setProduct }) {
-    console.log("Items added in the cart are as follows: ", product);
-
     return (
         <div className='cart'>
             <h3>Cart</h3>
@@ -11,7 +9,10 @@ export default function Cart({ product, setProduct }) {
                     {product?.map(items => (
                         <div className='cart-item' key={items.id}>
                             <img src={items.image} alt={items.title} width={50} height={50} />
-                            <p>{items.title}</p>
+                            <div className='cart-info'>
+                                <p className="cart-title">{items.title}</p>
+                                <p className="cart-qty">QTY: {items.quantity}</p>
+                            </div>
                         </div>
                     ))}
                 </div>
