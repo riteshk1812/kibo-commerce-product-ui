@@ -47,7 +47,7 @@ export default function ProductList({ setCartItems }) {
                 </div> :
                 products?.map(product => (
                     <div key={product.id} className='product-card'>
-                        <img src={product.image} alt={product.title} width={75} height={75} loading='lazy' style={{ objectFit: 'contain', maxWidth: '100%', height: 'auto' }} />
+                        <img src={product.image} alt={product.title} width={75} height={75} loading='lazy' />
                         <h4>{product.title}</h4>
                         <p>{product.description.length > 500 ? product.description.substring(0, 500) + "..." : product.description}</p>
                         <div className='product-action'>
