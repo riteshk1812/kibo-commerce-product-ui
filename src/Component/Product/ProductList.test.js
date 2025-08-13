@@ -36,7 +36,6 @@ describe('ProductList Component', () => {
     it('calls setCartItems when Add to Cart clicked', async () => {
         const mockSetCartItems = jest.fn();
         render(<ProductList setCartItems={mockSetCartItems} />);
-        
         const addButton = await screen.findByRole('button', { name: /add to cart/i });
         fireEvent.click(addButton);
 

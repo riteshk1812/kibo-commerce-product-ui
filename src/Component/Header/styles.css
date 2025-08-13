@@ -30,6 +30,7 @@
     .cart-logo img {
         width: 22px;
         height: 22px;
+        padding-right: 20px;
     }
 }
 
@@ -38,11 +39,16 @@
     .header {
         flex-direction: row;
         justify-content: space-between;
-        padding: 8px 12px;
+        padding: 8px 0px;
     }
 
     .header-title {
         font-size: 16px;
+        margin-left: 10px;
+    }
+
+    .cart-logo {
+        margin-right: 10px;
     }
 
     .cart-logo img {
