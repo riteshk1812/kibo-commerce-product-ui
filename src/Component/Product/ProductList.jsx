@@ -1,27 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { PRODUCT_URI } from '../../Helpers/action_url';
+import { useCustomFetch } from '../../hooks/useCustomFetch';
 
 export default function ProductList({ setCartItems }) {
-    const [products, setProducts] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
-    const [error, setError] = useState('');
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const data = await fetch(PRODUCT_URI);
-                const response = await data.json();
-                setProducts(response);
-                setIsLoading(false)
-            }
-            catch (err) {
-                console.error(`Thrown error as: ${err}`)
-                setIsLoading(false)
-                setError(err);
-            }
-        }
-        fetchData();
-    }, [])
+    const {products, isLoading, error} = useCustomFetch(PRODUCT_URI);
+    console.log(products);
+    
 
     const handleAddToCart = (product) => {
         console.log("Product", product);

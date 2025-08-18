@@ -1,6 +1,9 @@
 import React from 'react';
 
 export default function Cart({ product, setProduct }) {
+    const handleRemove = (id) => {
+        setProduct([...product].filter(item => item.id !== id))
+    }
     return (
         <div className='cart'>
             <h3>Cart</h3>
@@ -12,6 +15,7 @@ export default function Cart({ product, setProduct }) {
                             <div className='cart-info'>
                                 <p className="cart-title">{items.title}</p>
                                 <p className="cart-qty">QTY: {items.quantity}</p>
+                                <span style={{cursor: 'pointer'}} onClick={() => handleRemove(items.id)}>❌</span>
                             </div>
                         </div>
                     ))}
