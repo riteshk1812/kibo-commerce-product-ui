@@ -8,8 +8,8 @@ export default function Product() {
     
     return (
         <div className='product'>
-            <ProductList setCartItems={setCartItems} />
-            <Cart setProduct={setCartItems} product={cartItems} />
+            <ProductList />
+            <Cart />
         </div>
     )
 }
